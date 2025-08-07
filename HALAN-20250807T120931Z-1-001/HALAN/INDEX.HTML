@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Halan - In Nakhel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Halan</h1>
+    <h2>In Nakhel</h2>
+  </header>
+<div class="customer-info">
+  <input type="text" id="customerName" placeholder="Name" required>
+  <input type="text" id="customerAddress" placeholder="Address" required>
+</div>
+  <div class="top-controls">
+    <input type="text" id="searchBox" placeholder="Search snacks..." onkeyup="filterItems()" />
+    <select id="categoryFilter" onchange="filterItems()">
+      <option value="all">All Categories</option>
+      <option value="chips">Chips</option>
+      <option value="drinks">Drinks</option>
+      <option value="chocolate">Chocolate</option>
+      <option value="biscuits">Biscuits</option>
+    </select>
+  </div>
+
+  <div class="delivery-options">
+    <label><input type="radio" name="delivery" value="15" checked /> Standard (30–45 min) – 15 LE</label>
+    <label><input type="radio" name="delivery" value="30" /> Fast (20–30 min) – 30 LE</label>
+  </div>
+
+  <section class="menu" id="menu">
+    <!-- Items (Chips) -->
+   <div class="item chips"><img src="images/tomato ch.png"><h3>Chipsy Tomato</h3><p>15 LE</p>
+  <button onclick="addToCart('Chipsy Tomato', 15)">Add</button>
+</div>
+
+<div class="item chips"> <img src="images/kebab ch.png"><h3>Chipsy Kebab</h3><p>15 LE</p>
+  <button onclick="addToCart('Chipsy Kebab', 15)">Add</button>
+</div>
+
+<div class="item chips"><img src="images/cheese and onion ch.png"><h3>Chipsy Cheese and Onion</h3><p>15 LE</p>
+  <button onclick="addToCart('Chipsy Cheese and Onion', 15)">Add</button>
+</div>
+
+<div class="item chips"><img src="images/salt ch.png"><h3>Chipsy Salt</h3><p>15 LE</p>
+  <button onclick="addToCart('Chipsy Salt', 15)">Add</button>
+</div>
+
+<div class="item chips"><img src="images/lemon ch.png"><h3>Chipsy Lemon & Chili</h3><p>15 LE</p>
+  <button onclick="addToCart('Chipsy Lemon & Chili', 15)">Add</button>
+</div>
+
+    <!-- Items (chocolate) -->
+    <div class="item chocolate"><img src="chocolate/kitkat.png" ><h3>kitkat</h3><p>30 LE</p><button onclick="addToCart('Milky Way', 30)">Add</button></div>
+    <div class="item chocolate"><img src="chocolate/galaxy.png" ><h3>Galaxy</h3><p>30 LE</p><button onclick="addToCart('Galaxy', 30)">Add</button></div>
+    <div class="item chocolate"><img src="chocolate/twix.png" ><h3>Twix</h3><p>30 LE</p><button onclick="addToCart('Twix', 30)">Add</button></div>
+    <div class="item chocolate"><img src="chocolate/snickers.png" ><h3>Snickers</h3><p>30 LE</p><button onclick="addToCart('Snickers', 30)">Add</button></div>
+    <div class="item chocolate"><img src="chocolate/dairy milk.png" ><h3>Cadbury Dairy Milk</h3><p>30 LE</p><button onclick="addToCart('Cadbury Dairy Milk', 30)">Add</button></div>
+    <!-- Items (drinks) -->
+    <div class="item drinks"><img src="drinks/7up.png" ><h3>7up</h3><p>15 LE</p><button onclick="addToCart('7up', 15)">Add</button></div>
+    <div class="item drinks"><img src="drinks/coca.png" ><h3>cocacola</h3><p>15 LE</p><button onclick="addToCart('cocacola', 15)">Add</button></div>
+    <div class="item drinks"><img src="drinks/pepsi.png" ><h3>pepsi</h3><p>15 LE</p><button onclick="addToCart('pepsi', 15)">Add</button></div>
+    <div class="item drinks"><img src="drinks/fury.png" ><h3>fury</h3><p>20 LE</p><button onclick="addToCart('fury', 20)">Add</button></div>
+    <!-- Items (biscuits) -->
+    <div class="item biscuits"><img src="biscuits/oreo.png" ><h3>oreo</h3><p>15 LE</p><button onclick="addToCart('oreo', 15)">Add</button></div>
+    <div class="item biscuits"><img src="biscuits/tudo.png" ><h3>todu</h3><p>15 LE</p><button onclick="addToCart('todu', 15)">Add</button></div>
+    <div class="item biscuits"><img src="biscuits/hohos.png" ><h3>hohos</h3><p>15 LE</p><button onclick="addToCart('hohos', 15)">Add</button></div>
+    <div class="item biscuits"><img src="biscuits/molto.png" ><h3>Molto</h3><p>20 LE</p><button onclick="addToCart('Molto', 20)">Add</button></div>
+
+  </section>
+
+  <div class="cart-popup" id="cartPopup">
+    <h3>Your Cart</h3>
+    <ul id="cartItems"></ul>
+    <p id="cartTotal">Total: 0 LE</p>
+    <button onclick="sendWhatsAppOrder()">Send Order via WhatsApp</button>
+    <button onclick="clearCart()">Clear Cart</button>
+  </div>
+
+  <button class="view-cart" onclick="toggleCart()">🛒 View Cart (<span id="cartCount">0</span>)</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
